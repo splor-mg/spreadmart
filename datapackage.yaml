@@ -1,0 +1,10 @@
+name: spreadmart
+title: Data mart de dados orçamentários
+resources:
+  - name: exec_desp
+    path: duckdb:///db.duckdb#exec_desp
+sources:
+  - title: Despesa Orçamentária
+    path: https://dados.mg.gov.br/dataset/despesa
+  - title: Plano Plurianual
+    path: https://raw.githubusercontent.com/splor-mg/ppag2023-dadosmg/main/datapackage.yaml

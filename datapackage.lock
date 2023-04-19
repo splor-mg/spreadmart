@@ -1,0 +1,6 @@
+packages:
+    - name: ppag
+    resources:
+        - name: acoes_planejamento
+          path: https://raw.githubusercontent.com/splor-mg/ppag2023-dadosmg/main/data/acoes_planejamento.csv 
+          hash: 65de763b8594812c47999da143f5833a6eb1b6f78fc7d5aa36fb6f78086dfc91
