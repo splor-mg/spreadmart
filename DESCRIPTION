@@ -1,0 +1,16 @@
+Package: spreadmart
+Type: Package
+Title: Data mart orçamnetário
+Version: 0.0.0-9000
+Authors@R: c(person(given = "Francisco", 
+                    family = "Alves", 
+                    email = "francisco.junior@planejamento.mg.gov.br",
+                    role = c("aut", "cre")))
+Maintainer: Francisco Alves <francisco.junior@planejamento.mg.gov.br>
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.2.3
+Roxygen: list(markdown = TRUE)
+Imports:
+    data.table,
