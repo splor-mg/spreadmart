@@ -2,44 +2,39 @@
 
 ## Extração
 
-O arquivo `datapackage.yaml` contém todas as dependências de dados na propriedade `package.sources`. Para capturar a URL e a checksum de cada recurso no arquivo `datapackage.lock` execute:
+O arquivo `datapackage.yaml` contém todas as fontes de dados do projeto na propriedade `package.sources`.
+Cada fonte de dados é um data package frictionless ou um conjunto de dados do CKAN.
+
+Para fazer o download de todos os recursos e armazenar na pasta `data/raw/` execute:
 
 ```bash
-dpkgm snapshot
+make extract
 ```
 
-Para efetivamente fazer o download das dependências de dados execute:
+Para copiar para a pasta `data/staging/` somente os recursos que tiveram modificação execute:
 
 ```bash
-dpkgm fetch
+make ingest
 ```
 
-Esse comando vai sobrescrever suas fontes de dados de acordo com as novas versões que foram publicadas. No entanto, arquivos de dados que por ventura não tenham tido nenhuma modificação não terão nenhuma modificação, inclusive de _timestamp_. Isso é proposital para que seja possível realizar processamentos incrementais.
-
-Para estruturalmente os arquivos de dados execute:
+Nesse momento é possível que tenha sido feita a ingestão de novos recursos e mudanças 
 
 ```bash
-frictionless validate --checks pick-syntax-checks datapackages/
+make load # load all 
 ```
-
-Para realizar a carga na _staging area_ execute:
-
-```bash
-frictionless index datapackages/ sqlite:///data/staging/db.sqlite
-```
-
-## Validação
-
-Como os dados primários podem sofrer alteração sem controle centralizado, as validações de conteúdo são feitas depois dos dados carregados para a _staging area_. Essa etapa vai permitir a determinação de mudanças de schema e no conteúdo dos dados primários.
 
 ```bash
 frictionless validate data/staging/datapackage.json
 ```
 
-## Carga
+```bash
+make transform
+```
 
-## Transformação
+```bash
+make check
+```
 
-## Validação
-
-Por fim são executados as validações de regras de negócio.
+```bash
+frictionless validate datapackage.yaml
+```
