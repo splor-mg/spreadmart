@@ -14,3 +14,7 @@ RoxygenNote: 7.2.3
 Roxygen: list(markdown = TRUE)
 Imports:
     data.table,
+    frictionless,
+    relatorios
+Remotes: 
+    bitbucket::dcgf/relatorios

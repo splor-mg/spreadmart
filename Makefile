@@ -1,4 +1,12 @@
-.PHONY: fetch
+.PHONY: all extract transform publish
 
-fetch:
-	ckanapi dump datasets --remote https://dados.mg.gov.br/ --datapackages=datapackages despesa
+all: extract transform publish
+
+extract:
+	dpm install
+
+transform:
+	Rscript scripts/transform.R
+
+publish:
+	dpm load --package datapackage.json

@@ -1,21 +1,24 @@
 # Data mart Orçamentário (aka Spreadmart)
 
-## [Instalação e configuração do docker](https://github.com/splor-mg/postgresql-carga-despesa/tree/main#instala%C3%A7%C3%A3o-e-configura%C3%A7%C3%A3o-do-docker)
+## Pré-requisitos
 
-- Baixar e instalar o Docker Desktop.
+- Docker Desktop;
+- R (e pacote `devtools`);
+- Python.
 
-### [Uso](https://github.com/splor-mg/postgresql-carga-despesa/tree/main#uso)
+Criar as variáveis de ambiente `BITBUCKET_USER` e `BITBUCKET_PASSWORD` para acesso ao Bitbucket da DCAF e instalar as dependências do R e Python:
 
-O arquivo `docker-compose.yml` está configurado para levantar o [PostgreSQL](https://www.postgresql.org/) (usuário: postgres; senha: postgres) e [pgAdmin](https://www.pgadmin.org/) (usuário: [splor@planejamento.mg.gov.br](mailto:splor@planejamento.mg.gov.br); senha: admin). Para isso execute na linha de comando (depois de abrir o Docker Desktop)
-
-```shell
-docker compose up
+```bash
+Rscript -e "devtools::install()"
+python -m pip install -r requirements.txt
 ```
 
-O pgAdmin está disponível em [http://localhost:5050/](http://localhost:5050/). É necessário inserir a senha default `postgres` para conexão ao banco.
+## Uso
 
-Se o cliente `psql` estiver instalado é possível se conectar ao banco de dados com:
+Depois de levantar o banco [postgres](https://github.com/splor-mg/postgresql-carga-despesa#instala%C3%A7%C3%A3o-e-configura%C3%A7%C3%A3o-do-docker) execute:
 
-```shell
-psql -h localhost -U postgres -W
+```bash
+make all
 ```
+
+Um novo schema `link` será criado no banco de dados com a modelagem linktable.
