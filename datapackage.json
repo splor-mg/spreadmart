@@ -1,4 +1,5 @@
 {
+  "name": "link",
   "resources": [
     {
       "name": "fact_loa_desp",
@@ -149,7 +150,8 @@
           },
           {
             "name": "RECEITA_COD",
-            "type": "integer"
+            "type": "integer",
+            "bigint": true
           },
           {
             "name": "RECEITA_DESC",
@@ -198,7 +200,7 @@
           },
           {
             "name": "CHAVE",
-            "type": "integer"
+            "type": "string"
           },
           {
             "name": "UO_COD_GRP",
@@ -246,7 +248,7 @@
           },
           {
             "name": "VL_CREDITO",
-            "type": "integer"
+            "type": "number"
           },
           {
             "name": "VL_REEST_DESP",
@@ -258,7 +260,7 @@
           },
           {
             "name": "DATA_REGISTRO_DECRETO",
-            "type": "integer"
+            "type": "any"
           },
           {
             "name": "DECRETO",
@@ -311,7 +313,7 @@
           },
           {
             "name": "CHAVE",
-            "type": "integer"
+            "type": "string"
           },
           {
             "name": "MES_COD",
@@ -323,7 +325,8 @@
           },
           {
             "name": "RECEITA_COD",
-            "type": "integer"
+            "type": "integer",
+            "bigint": true
           },
           {
             "name": "RECEITA_DESC",
