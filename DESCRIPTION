@@ -15,6 +15,7 @@ Roxygen: list(markdown = TRUE)
 Imports:
     data.table,
     frictionless,
-    relatorios
+    relatorios,
+    logger
 Remotes: 
     bitbucket::dcgf/relatorios
