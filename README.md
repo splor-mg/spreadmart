@@ -6,7 +6,9 @@
 - R (e pacote `devtools`);
 - Python.
 
-Criar as variáveis de ambiente `BITBUCKET_USER` e `BITBUCKET_PASSWORD` para acesso ao Bitbucket da DCAF e instalar as dependências do R e Python:
+Crie um arquivo `.env` com a definição das variáveis de ambiente `SQLALCHEMY_URL`, `GITHUB_PAT` `BITBUCKET_USER` e `BITBUCKET_PASSWORD`. Existe um modelo em `.env.example`.
+
+Agora você pode instalar as dependências do R e Python:
 
 ```bash
 Rscript -e "devtools::install()"

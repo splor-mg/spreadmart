@@ -6,3 +6,4 @@ data/staging/*
 !data/staging/datapackage.json
 datapackages/*
 !datapackages/.gitkeep
+.env
