@@ -1,0 +1,416 @@
+{
+  "name": "link",
+  "resources": [
+    {
+      "name": "fact_loa_desp",
+      "type": "table",
+      "path": "data/fact_loa_desp.csv",
+      "scheme": "file",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "schema": {
+        "fields": [
+          {
+            "name": "chave_desp",
+            "type": "string"
+          },
+          {
+            "name": "ORGAO_COD",
+            "type": "integer"
+          },
+          {
+            "name": "ORGAO_NOME_SIGLA",
+            "type": "string"
+          },
+          {
+            "name": "UO_NOME_SIGLA",
+            "type": "string"
+          },
+          {
+            "name": "SUBFUNCAO_COD",
+            "type": "integer"
+          },
+          {
+            "name": "PROGRAMA_COD",
+            "type": "integer"
+          },
+          {
+            "name": "IDENTIFICADOR",
+            "type": "integer"
+          },
+          {
+            "name": "PROJETO_ATIVIDADE",
+            "type": "integer"
+          },
+          {
+            "name": "SUBPROJETO_COD",
+            "type": "integer"
+          },
+          {
+            "name": "CATEGORIA_COD",
+            "type": "integer"
+          },
+          {
+            "name": "MODALIDADE_COD",
+            "type": "integer"
+          },
+          {
+            "name": "ELEMENTO_COD",
+            "type": "integer"
+          },
+          {
+            "name": "ITEM_COD",
+            "type": "integer"
+          },
+          {
+            "name": "IAG_COD",
+            "type": "integer"
+          },
+          {
+            "name": "ACAO_DESC",
+            "type": "string"
+          },
+          {
+            "name": "VL_LOA_DESP",
+            "type": "number"
+          },
+          {
+            "name": "ELEMENTO_ITEM_COD",
+            "type": "integer"
+          }
+        ]
+      }
+    },
+    {
+      "name": "fact_loa_rec",
+      "type": "table",
+      "path": "data/fact_loa_rec.csv",
+      "scheme": "file",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "schema": {
+        "fields": [
+          {
+            "name": "chave_rec",
+            "type": "string"
+          },
+          {
+            "name": "NOME_UO",
+            "type": "string"
+          },
+          {
+            "name": "UO_SIGLA",
+            "type": "string"
+          },
+          {
+            "name": "FONTE_DESC",
+            "type": "string"
+          },
+          {
+            "name": "INTERPRETACAO",
+            "type": "string"
+          },
+          {
+            "name": "CATEGORIA",
+            "type": "integer"
+          },
+          {
+            "name": "ORIGEM",
+            "type": "integer"
+          },
+          {
+            "name": "ESPECIE",
+            "type": "integer"
+          },
+          {
+            "name": "RUBRICA",
+            "type": "integer"
+          },
+          {
+            "name": "ALINEA",
+            "type": "integer"
+          },
+          {
+            "name": "SUBALINEA",
+            "type": "integer"
+          },
+          {
+            "name": "TIPO_DE_RECEITA",
+            "type": "integer"
+          },
+          {
+            "name": "ITEM",
+            "type": "integer"
+          },
+          {
+            "name": "SUBITEM",
+            "type": "integer"
+          },
+          {
+            "name": "RECEITA_COD",
+            "type": "integer",
+            "bigint": true
+          },
+          {
+            "name": "RECEITA_DESC",
+            "type": "string"
+          },
+          {
+            "name": "INTERP_RECEITA",
+            "type": "string"
+          },
+          {
+            "name": "VL_LOA_REC_UO",
+            "type": "number"
+          },
+          {
+            "name": "VL_LOA_REC_SCPPO",
+            "type": "number"
+          },
+          {
+            "name": "VL_LOA_REC",
+            "type": "number"
+          },
+          {
+            "name": "BASE_LEGAL",
+            "type": "string"
+          },
+          {
+            "name": "METODOLOGIA_DE_CALCULO_E_PREMISSAS_UTILIZADAS",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    {
+      "name": "fact_reest_desp",
+      "type": "table",
+      "path": "data/fact_reest_desp.csv",
+      "scheme": "file",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "schema": {
+        "fields": [
+          {
+            "name": "chave_desp",
+            "type": "string"
+          },
+          {
+            "name": "CHAVE",
+            "type": "string"
+          },
+          {
+            "name": "UO_COD_GRP",
+            "type": "integer"
+          },
+          {
+            "name": "UO_SIGLA",
+            "type": "string"
+          },
+          {
+            "name": "ACAO_DESC",
+            "type": "string"
+          },
+          {
+            "name": "IPG_COD",
+            "type": "integer"
+          },
+          {
+            "name": "MODALIDADE_COD",
+            "type": "integer"
+          },
+          {
+            "name": "ELEMENTO_COD",
+            "type": "integer"
+          },
+          {
+            "name": "ELEMENTO_ITEM_COD",
+            "type": "integer"
+          },
+          {
+            "name": "DEMONSTRATIVO_VBA",
+            "type": "string"
+          },
+          {
+            "name": "CRITERIO_SEPLAG_VBA",
+            "type": "string"
+          },
+          {
+            "name": "TRANSITA_VBA",
+            "type": "string"
+          },
+          {
+            "name": "VL_DEBITO",
+            "type": "number"
+          },
+          {
+            "name": "VL_CREDITO",
+            "type": "number"
+          },
+          {
+            "name": "VL_REEST_DESP",
+            "type": "number"
+          },
+          {
+            "name": "TAG_REEST",
+            "type": "string"
+          },
+          {
+            "name": "DATA_REGISTRO_DECRETO",
+            "type": "any"
+          },
+          {
+            "name": "DECRETO",
+            "type": "string"
+          },
+          {
+            "name": "CRED_ADIC_COD",
+            "type": "integer"
+          },
+          {
+            "name": "OPERADOR_REEST_DESP",
+            "type": "string"
+          },
+          {
+            "name": "DATA_REEST_DESP",
+            "type": "date"
+          },
+          {
+            "name": "SEQ_REEST_DESP",
+            "type": "integer"
+          },
+          {
+            "name": "MSG_REEST_DESP",
+            "type": "string"
+          },
+          {
+            "name": "AUTORIZACAO",
+            "type": "string"
+          },
+          {
+            "name": "CRITERIO_DCMEFO",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    {
+      "name": "fact_reest_rec",
+      "type": "table",
+      "path": "data/fact_reest_rec.csv",
+      "scheme": "file",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "schema": {
+        "fields": [
+          {
+            "name": "chave_rec",
+            "type": "string"
+          },
+          {
+            "name": "CHAVE",
+            "type": "string"
+          },
+          {
+            "name": "MES_COD",
+            "type": "integer"
+          },
+          {
+            "name": "UO_SIGLA",
+            "type": "string"
+          },
+          {
+            "name": "RECEITA_COD",
+            "type": "integer",
+            "bigint": true
+          },
+          {
+            "name": "RECEITA_DESC",
+            "type": "string"
+          },
+          {
+            "name": "VL_REEST_REC",
+            "type": "number"
+          },
+          {
+            "name": "TAG_REEST",
+            "type": "string"
+          },
+          {
+            "name": "OPERADOR_REEST_REC",
+            "type": "string"
+          },
+          {
+            "name": "DATA_REEST_REC",
+            "type": "date"
+          },
+          {
+            "name": "SEQ_REEST_REC",
+            "type": "integer"
+          },
+          {
+            "name": "MSG_REEST_REC",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    {
+      "name": "link_table",
+      "type": "table",
+      "path": "data/link_table.csv",
+      "scheme": "file",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "schema": {
+        "fields": [
+          {
+            "name": "chave_rec",
+            "type": "string"
+          },
+          {
+            "name": "chave_desp",
+            "type": "any"
+          },
+          {
+            "name": "UO_COD",
+            "type": "integer"
+          },
+          {
+            "name": "FONTE_COD",
+            "type": "integer"
+          },
+          {
+            "name": "ANO",
+            "type": "integer"
+          },
+          {
+            "name": "MDE",
+            "type": "boolean"
+          },
+          {
+            "name": "FUNCAO_COD",
+            "type": "any"
+          },
+          {
+            "name": "ACAO_COD",
+            "type": "any"
+          },
+          {
+            "name": "GRUPO_COD",
+            "type": "any"
+          },
+          {
+            "name": "IPU_COD",
+            "type": "any"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+[packages]
+
+[packages.sisor]
+
+path = "https://raw.githubusercontent.com/splor-mg/sisor-dados-2024/main/datapackage.json"
+resources = ["base_orcam_despesa_item_fiscal", "base_orcam_receita_fiscal"]
+
+[packages.reest]
+
+path = "https://raw.githubusercontent.com/splor-mg/reestimativa-dados/main/datapackage.json"
+token = "GITHUB_PAT"

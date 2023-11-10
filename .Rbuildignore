@@ -1,0 +1,15 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+^venv$
+requirements.in
+requirements.txt
+^docs$
+^scripts$
+Makefile
+Dockerfile
+docker-compose.yml
+servers.json
+data.toml
+datapackage.json
+^datapackages$
+^data$

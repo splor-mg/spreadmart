@@ -1,0 +1,24 @@
+version: "3.9"
+services:
+    db:
+      image: postgres
+      container_name: db
+      environment:
+        - POSTGRES_DB=postgres
+        - POSTGRES_USER=postgres
+        - POSTGRES_PASSWORD=postgres
+      ports:
+      - "5432:5432"
+    admin:
+      image: dpage/pgadmin4
+      container_name: admin
+      environment:
+        PGADMIN_DEFAULT_EMAIL: splor@planejamento.mg.gov.br
+        PGADMIN_DEFAULT_PASSWORD: admin
+        PGADMIN_LISTEN_PORT: 5050
+      ports:
+        - "5050:5050"
+      volumes:
+        - ./servers.json:/pgadmin4/servers.json
+      depends_on:
+        - db
