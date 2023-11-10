@@ -12,3 +12,6 @@ transform:
 
 publish:
 	dpm load --package datapackage.json
+
+clean:
+	@rm -f data/*.csv
