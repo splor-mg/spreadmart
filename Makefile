@@ -11,6 +11,7 @@ transform:
 	Rscript scripts/transform.R
 
 publish:
+	dpm load
 	dpm load --package datapackage.json
 
 clean:
