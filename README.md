@@ -6,19 +6,27 @@
 - R (e pacote `devtools`);
 - Python.
 
-Crie um arquivo `.env` com os valores para as variáveis de ambiente `SQLALCHEMY_URL`, `GITHUB_PAT`, `BITBUCKET_USER` e `BITBUCKET_PASSWORD`[^20231110T125652]. Existe um modelo em `.env.example`. __Não utilize aspas__.
+Crie um arquivo `.env` com os valores para as variáveis de ambiente `SQLALCHEMY_URL`, `GITHUB_PAT`, `BITBUCKET_USER` e `BITBUCKET_PASSWORD`[^20231110T125652]. Existe um modelo em `.env.example`. __Não utilize aspas__. 
+Este arquivo contêm variáveis de ambiente que serão inseridas no `Makefile` e parseadas aos programas durante sua execução.
 
 [^20231110T125652]: A variável `GITHUB_PAT` é para a [personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens) da sua conta no Github. As variáveis `BITBUCKET_USER` e `BITBUCKET_PASSWORD` são para acesso ao [Bitbucket](https://bitbucket.org/dcgf/workspace/overview/) da DCAF/SPLOR. Se você não tiver essa informação entre em contato com um colega de equipe.
 
 Agora você pode instalar as dependências do R e Python[^20231110T125612]:
 
-[^20231110T125612]: Lembre de criar e ativar seu ambiente virtual python
+[^20231110T125612]: Lembre-se de criar e ativar o seu ambiente virtual no python
 
 ```bash
 Rscript -e "devtools::install()"
 python -m pip install -r requirements.txt
 ```
 
+## Levantar o banco postgress
+
+O arquivo `docker-compose.yml` está configurado para levantar o [PostgreSQL](https://www.postgresql.org/) (usuário: postgres; senha: postgres) e [pgAdmin](https://www.pgadmin.org/) (usuário: splor@planejamento.mg.gov.br; senha: admin). Para isso, depois de abrir o Docker Desktop, execute o seguinte código na linha de comando: 
+
+```bash
+docker compose up
+```
 ## Uso
 
 Depois de levantar o banco [postgres](https://github.com/splor-mg/postgresql-carga-despesa#instala%C3%A7%C3%A3o-e-configura%C3%A7%C3%A3o-do-docker) execute:
