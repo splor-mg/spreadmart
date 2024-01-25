@@ -22,13 +22,8 @@ link <- function(dt, keys) {
 safe_link <- purrr::safely(link)
 
 #' @export
-create_link_table <- function(..., keys) {
-  # Capture the names of the variables passed as ...
-  dt_names <- as.character(substitute(list(...))[-1L])
-  
-  # Create a named list using the variable names as keys
-  dt_list <- setNames(list(...), dt_names)
-  dt_transformed <- lapply(dt_list, link, keys = keys)
+create_link_table <- function(datasets, keys) {
+  dt_transformed <- lapply(datasets, link, keys = keys)
   unique(data.table::rbindlist(dt_transformed, fill = TRUE))
 }
 

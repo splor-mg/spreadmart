@@ -1,0 +1,14 @@
+[keys] 
+
+"chave_rec" = ["uo_cod", "fonte_cod"]
+"chave_desp" = ["uo_cod", "funcao_cod", "acao_cod", "grupo_cod", "fonte_cod", "ipu_cod"]
+
+[packages.reest]
+
+"reest_rec" = "chave_rec"
+"reest_desp" = "chave_desp"
+
+[packages.sisor]
+
+"base_orcam_receita_fiscal" = "chave_rec"
+"base_orcam_despesa_item_fiscal" = "chave_desp"
