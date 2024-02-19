@@ -2,4 +2,5 @@
 
 export(create_fact_table)
 export(create_link_table)
+export(read_datapackage)
 import(data.table)

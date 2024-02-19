@@ -16,6 +16,7 @@ Imports:
     data.table,
     frictionless,
     relatorios,
-    logger
+    logger,
+    here
 Remotes: 
     bitbucket::dcgf/relatorios
