@@ -1,95 +1,90 @@
 {
-  "name": "link",
   "resources": [
     {
-      "name": "fact_loa_desp",
+      "name": "fact_base_orcam_despesa_item_fiscal",
       "type": "table",
-      "path": "data/fact_loa_desp.csv",
+      "path": "data/fact_base_orcam_despesa_item_fiscal.csv",
       "scheme": "file",
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
+      "hash": "sha256:45620d2fa2e597b9ff02854107504a3134afa2123ce51099b63b8cc5ac351cb3",
+      "bytes": 2499747,
+      "fields": 14,
+      "rows": 11331,
       "schema": {
         "fields": [
           {
-            "name": "chave_desp",
+            "name": "chave_loa",
             "type": "string"
           },
           {
-            "name": "ORGAO_COD",
+            "name": "orgao_cod",
             "type": "integer"
           },
           {
-            "name": "ORGAO_NOME_SIGLA",
+            "name": "orgao_nome_sigla",
             "type": "string"
           },
           {
-            "name": "UO_NOME_SIGLA",
+            "name": "uo_nome_sigla",
             "type": "string"
           },
           {
-            "name": "SUBFUNCAO_COD",
+            "name": "subfuncao_cod",
             "type": "integer"
           },
           {
-            "name": "PROGRAMA_COD",
+            "name": "programa_cod",
             "type": "integer"
           },
           {
-            "name": "IDENTIFICADOR",
+            "name": "identificador_tipo_acao_cod",
             "type": "integer"
           },
           {
-            "name": "PROJETO_ATIVIDADE",
+            "name": "projeto_atividade_cod",
             "type": "integer"
           },
           {
-            "name": "SUBPROJETO_COD",
+            "name": "subprojeto_subatividade_cod",
             "type": "integer"
           },
           {
-            "name": "CATEGORIA_COD",
+            "name": "categoria_cod",
             "type": "integer"
           },
           {
-            "name": "MODALIDADE_COD",
+            "name": "elemento_cod",
             "type": "integer"
           },
           {
-            "name": "ELEMENTO_COD",
+            "name": "item_cod",
             "type": "integer"
           },
           {
-            "name": "ITEM_COD",
-            "type": "integer"
-          },
-          {
-            "name": "IAG_COD",
-            "type": "integer"
-          },
-          {
-            "name": "ACAO_DESC",
+            "name": "acao_desc",
             "type": "string"
           },
           {
-            "name": "VL_LOA_DESP",
+            "name": "vlr_loa_desp",
             "type": "number"
-          },
-          {
-            "name": "ELEMENTO_ITEM_COD",
-            "type": "integer"
           }
         ]
       }
     },
     {
-      "name": "fact_loa_rec",
+      "name": "fact_base_orcam_receita_fiscal",
       "type": "table",
-      "path": "data/fact_loa_rec.csv",
+      "path": "data/fact_base_orcam_receita_fiscal.csv",
       "scheme": "file",
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
+      "hash": "sha256:de3ad3caf688b4aa39909c17e8f216e4402eee2789c4b09851a097fd147ecc53",
+      "bytes": 496613,
+      "fields": 23,
+      "rows": 1025,
       "schema": {
         "fields": [
           {
@@ -97,264 +92,238 @@
             "type": "string"
           },
           {
-            "name": "NOME_UO",
+            "name": "nome_uo",
             "type": "string"
           },
           {
-            "name": "UO_SIGLA",
+            "name": "uo_sigla",
             "type": "string"
           },
           {
-            "name": "FONTE_DESC",
+            "name": "fonte_desc",
             "type": "string"
           },
           {
-            "name": "INTERPRETACAO",
+            "name": "interpretacao",
             "type": "string"
           },
           {
-            "name": "CATEGORIA",
+            "name": "categoria",
             "type": "integer"
           },
           {
-            "name": "ORIGEM",
+            "name": "origem",
             "type": "integer"
           },
           {
-            "name": "ESPECIE",
+            "name": "especie",
             "type": "integer"
           },
           {
-            "name": "RUBRICA",
+            "name": "rubrica",
             "type": "integer"
           },
           {
-            "name": "ALINEA",
+            "name": "alinea",
             "type": "integer"
           },
           {
-            "name": "SUBALINEA",
+            "name": "subalinea",
             "type": "integer"
           },
           {
-            "name": "TIPO_DE_RECEITA",
+            "name": "tipo_de_receita",
             "type": "integer"
           },
           {
-            "name": "ITEM",
+            "name": "item",
             "type": "integer"
           },
           {
-            "name": "SUBITEM",
+            "name": "subitem",
             "type": "integer"
           },
           {
-            "name": "RECEITA_COD",
-            "type": "integer",
-            "bigint": true
+            "name": "receita_cod",
+            "type": "integer"
           },
           {
-            "name": "RECEITA_DESC",
+            "name": "receita_desc",
             "type": "string"
           },
           {
-            "name": "INTERP_RECEITA",
+            "name": "interp_receita",
             "type": "string"
           },
           {
-            "name": "VL_LOA_REC_UO",
+            "name": "vlr_loa_rec_uo",
             "type": "number"
           },
           {
-            "name": "VL_LOA_REC_SCPPO",
+            "name": "vlr_loa_rec_scppo",
             "type": "number"
           },
           {
-            "name": "VL_LOA_REC",
+            "name": "vlr_loa_rec",
             "type": "number"
           },
           {
-            "name": "BASE_LEGAL",
+            "name": "ano",
+            "type": "integer"
+          },
+          {
+            "name": "base_legal",
             "type": "string"
           },
           {
-            "name": "METODOLOGIA_DE_CALCULO_E_PREMISSAS_UTILIZADAS",
+            "name": "metodologia_de_calculo_e_premissas_utilizadas",
             "type": "string"
           }
         ]
       }
     },
     {
-      "name": "fact_reest_desp",
+      "name": "fact_execucao",
       "type": "table",
-      "path": "data/fact_reest_desp.csv",
+      "path": "data/fact_execucao.csv",
       "scheme": "file",
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
+      "hash": "sha256:e3b65f73ee68722c62d7ca8a407b2ef47654571813a8f438761c52437ea62cb9",
+      "bytes": 6983982,
+      "fields": 8,
+      "rows": 50277,
       "schema": {
         "fields": [
           {
-            "name": "chave_desp",
+            "name": "chave_exec",
             "type": "string"
           },
           {
-            "name": "CHAVE",
-            "type": "string"
-          },
-          {
-            "name": "UO_COD_GRP",
+            "name": "programa_cod",
             "type": "integer"
           },
           {
-            "name": "UO_SIGLA",
+            "name": "licitacao_modalidade",
             "type": "string"
           },
           {
-            "name": "ACAO_DESC",
-            "type": "string"
-          },
-          {
-            "name": "IPG_COD",
-            "type": "integer"
-          },
-          {
-            "name": "MODALIDADE_COD",
-            "type": "integer"
-          },
-          {
-            "name": "ELEMENTO_COD",
-            "type": "integer"
-          },
-          {
-            "name": "ELEMENTO_ITEM_COD",
-            "type": "integer"
-          },
-          {
-            "name": "DEMONSTRATIVO_VBA",
-            "type": "string"
-          },
-          {
-            "name": "CRITERIO_SEPLAG_VBA",
-            "type": "string"
-          },
-          {
-            "name": "TRANSITA_VBA",
-            "type": "string"
-          },
-          {
-            "name": "VL_DEBITO",
+            "name": "vlr_empenhado",
             "type": "number"
           },
           {
-            "name": "VL_CREDITO",
+            "name": "vlr_liquidado",
             "type": "number"
           },
           {
-            "name": "VL_REEST_DESP",
+            "name": "vlr_liquidado_retido",
+            "type": "integer"
+          },
+          {
+            "name": "vlr_pago_orcamentario",
             "type": "number"
           },
           {
-            "name": "TAG_REEST",
+            "name": "vlr_pago_financeiro",
+            "type": "number"
+          }
+        ]
+      }
+    },
+    {
+      "name": "fact_restos_pagar",
+      "type": "table",
+      "path": "data/fact_restos_pagar.csv",
+      "scheme": "file",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "hash": "sha256:5ef05387b722027f88f417ecc7d54765a549aa5523317f40b688eb5a759ce899",
+      "bytes": 26410785,
+      "fields": 20,
+      "rows": 205133,
+      "schema": {
+        "fields": [
+          {
+            "name": "chave_exec",
             "type": "string"
           },
           {
-            "name": "DATA_REGISTRO_DECRETO",
+            "name": "ano_rp",
+            "type": "integer"
+          },
+          {
+            "name": "elemento_cod",
+            "type": "integer"
+          },
+          {
+            "name": "item_cod",
+            "type": "integer"
+          },
+          {
+            "name": "razao_social_credor",
             "type": "any"
           },
           {
-            "name": "DECRETO",
-            "type": "string"
-          },
-          {
-            "name": "CRED_ADIC_COD",
-            "type": "integer"
-          },
-          {
-            "name": "OPERADOR_REEST_DESP",
-            "type": "string"
-          },
-          {
-            "name": "DATA_REEST_DESP",
-            "type": "date"
-          },
-          {
-            "name": "SEQ_REEST_DESP",
-            "type": "integer"
-          },
-          {
-            "name": "MSG_REEST_DESP",
-            "type": "string"
-          },
-          {
-            "name": "AUTORIZACAO",
-            "type": "string"
-          },
-          {
-            "name": "CRITERIO_DCMEFO",
-            "type": "string"
-          }
-        ]
-      }
-    },
-    {
-      "name": "fact_reest_rec",
-      "type": "table",
-      "path": "data/fact_reest_rec.csv",
-      "scheme": "file",
-      "format": "csv",
-      "mediatype": "text/csv",
-      "encoding": "utf-8",
-      "schema": {
-        "fields": [
-          {
-            "name": "chave_rec",
-            "type": "string"
-          },
-          {
-            "name": "CHAVE",
-            "type": "string"
-          },
-          {
-            "name": "MES_COD",
-            "type": "integer"
-          },
-          {
-            "name": "UO_SIGLA",
-            "type": "string"
-          },
-          {
-            "name": "RECEITA_COD",
-            "type": "integer",
-            "bigint": true
-          },
-          {
-            "name": "RECEITA_DESC",
-            "type": "string"
-          },
-          {
-            "name": "VL_REEST_REC",
+            "name": "vlr_inscrito_rpnp",
             "type": "number"
           },
           {
-            "name": "TAG_REEST",
-            "type": "string"
-          },
-          {
-            "name": "OPERADOR_REEST_REC",
-            "type": "string"
-          },
-          {
-            "name": "DATA_REEST_REC",
-            "type": "date"
-          },
-          {
-            "name": "SEQ_REEST_REC",
+            "name": "vlr_cancelado_rpnp",
             "type": "integer"
           },
           {
-            "name": "MSG_REEST_REC",
-            "type": "string"
+            "name": "vlr_restabelecido_rpnp",
+            "type": "integer"
+          },
+          {
+            "name": "vlr_despesa_liquidada_rpnp",
+            "type": "number"
+          },
+          {
+            "name": "vlr_despesa_liquidada_pagar",
+            "type": "number"
+          },
+          {
+            "name": "vlr_saldo_rpp",
+            "type": "number"
+          },
+          {
+            "name": "vlr_saldo_rpnp",
+            "type": "number"
+          },
+          {
+            "name": "vlr_inscrito_rpp",
+            "type": "number"
+          },
+          {
+            "name": "vlr_cancelado_rpp",
+            "type": "integer"
+          },
+          {
+            "name": "vlr_desconto_rpp",
+            "type": "integer"
+          },
+          {
+            "name": "vlr_restabelecido_rpp",
+            "type": "integer"
+          },
+          {
+            "name": "vlr_pago_rpp",
+            "type": "number"
+          },
+          {
+            "name": "vlr_anulacao_pagamento_rpp",
+            "type": "integer"
+          },
+          {
+            "name": "vlr_retencao_rpp",
+            "type": "number"
+          },
+          {
+            "name": "vlr_anulacao_retencao_rpp",
+            "type": "integer"
           }
         ]
       }
@@ -367,50 +336,115 @@
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
+      "hash": "sha256:42f5a832237b4ae4825fdf1cd85f41ee53c36323009503c0250ce8dd2f554e64",
+      "bytes": 48887006,
+      "fields": 25,
+      "rows": 258414,
       "schema": {
         "fields": [
+          {
+            "name": "chave_exec",
+            "type": "string"
+          },
+          {
+            "name": "chave_loa",
+            "type": "string"
+          },
           {
             "name": "chave_rec",
             "type": "string"
           },
           {
-            "name": "chave_desp",
-            "type": "any"
-          },
-          {
-            "name": "UO_COD",
+            "name": "ano",
             "type": "integer"
           },
           {
-            "name": "FONTE_COD",
+            "name": "mes_cod",
             "type": "integer"
           },
           {
-            "name": "ANO",
+            "name": "uo_cod",
             "type": "integer"
           },
           {
-            "name": "MDE",
-            "type": "boolean"
+            "name": "ue_cod",
+            "type": "integer"
           },
           {
-            "name": "FUNCAO_COD",
-            "type": "any"
+            "name": "upg_cod",
+            "type": "integer"
           },
           {
-            "name": "ACAO_COD",
-            "type": "any"
+            "name": "uo_fin_cod",
+            "type": "integer"
           },
           {
-            "name": "GRUPO_COD",
-            "type": "any"
+            "name": "funcao_cod",
+            "type": "integer"
           },
           {
-            "name": "IPU_COD",
-            "type": "any"
+            "name": "acao_cod",
+            "type": "integer"
+          },
+          {
+            "name": "grupo_cod",
+            "type": "integer"
+          },
+          {
+            "name": "modalidade_cod",
+            "type": "integer"
+          },
+          {
+            "name": "iag_cod",
+            "type": "integer"
+          },
+          {
+            "name": "fonte_cod",
+            "type": "integer"
+          },
+          {
+            "name": "ipu_cod",
+            "type": "integer"
+          },
+          {
+            "name": "elemento_item_cod",
+            "type": "integer"
+          },
+          {
+            "name": "elemento_dea_cod",
+            "type": "integer"
+          },
+          {
+            "name": "item_dea_cod",
+            "type": "integer"
+          },
+          {
+            "name": "num_processo_compra",
+            "type": "string"
+          },
+          {
+            "name": "cnpj_cpf_formatado",
+            "type": "string"
+          },
+          {
+            "name": "num_contrato_saida",
+            "type": "integer"
+          },
+          {
+            "name": "num_contrato_entrada",
+            "type": "integer"
+          },
+          {
+            "name": "num_obra",
+            "type": "integer"
+          },
+          {
+            "name": "num_empenho",
+            "type": "integer"
           }
         ]
       }
     }
-  ]
+  ],
+  "name": "link"
 }

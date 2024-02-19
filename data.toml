@@ -5,7 +5,8 @@
 path = "https://raw.githubusercontent.com/splor-mg/sisor-dados-2024/main/datapackage.json"
 resources = ["base_orcam_despesa_item_fiscal", "base_orcam_receita_fiscal"]
 
-[packages.reest]
+[packages.siafi_2024]
 
-path = "https://raw.githubusercontent.com/splor-mg/reestimativa-dados/main/datapackage.json"
+path = "https://raw.githubusercontent.com/splor-mg/armazem-siafi-dados-2024/main/datapackage.json"
+resources = ["execucao", "restos_pagar"]
 token = "GITHUB_PAT"
