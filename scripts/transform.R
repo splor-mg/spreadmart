@@ -30,6 +30,6 @@ resources <- map(names(config$packages), \(package_name) read_datapackage(glue("
 
 link_table <- create_link_table(resources, keys = config$keys)
 
-fact_tables |> imap(\(value, key) fwrite(value, glue("data/fact_{key}.csv")))
+fact_tables |> imap(\(value, key) fwrite(value, glue("data/{key}.csv")))
 
-fwrite(link_table, "data/link_table.csv")
+fwrite(link_table, "data/link.csv")

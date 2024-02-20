@@ -5,8 +5,35 @@
 path = "https://raw.githubusercontent.com/splor-mg/sisor-dados-2024/main/datapackage.json"
 resources = ["base_orcam_despesa_item_fiscal", "base_orcam_receita_fiscal"]
 
+[packages.projetos_vale]
+
+path = "https://raw.githubusercontent.com/transparencia-mg/acordo-judicial-reparacao-vale-projetos/main/dataset/datapackage.json"
+
+[packages.siad]
+
+path = "https://raw.githubusercontent.com/splor-mg/armazem-siad-dados/main/datapackage.json"
+token = "GITHUB_PAT"
+
 [packages.siafi_2024]
 
 path = "https://raw.githubusercontent.com/splor-mg/armazem-siafi-dados-2024/main/datapackage.json"
+resources = ["execucao", "restos_pagar"]
+token = "GITHUB_PAT"
+
+[packages.siafi_2023]
+
+path = "https://raw.githubusercontent.com/splor-mg/armazem-siafi-dados-2023/main/datapackage.json"
+resources = ["execucao", "restos_pagar"]
+token = "GITHUB_PAT"
+
+[packages.siafi_2022]
+
+path = "https://raw.githubusercontent.com/splor-mg/armazem-siafi-dados-2022/main/datapackage.json"
+resources = ["execucao", "restos_pagar"]
+token = "GITHUB_PAT"
+
+[packages.siafi_2021]
+
+path = "https://raw.githubusercontent.com/splor-mg/armazem-siafi-dados-2021/main/datapackage.json"
 resources = ["execucao", "restos_pagar"]
 token = "GITHUB_PAT"

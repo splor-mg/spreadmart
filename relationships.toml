@@ -1,14 +1,66 @@
-[keys] 
+[keys]
 
 "chave_rec" = ["uo_cod", "fonte_cod"]
-"chave_desp" = ["uo_cod", "funcao_cod", "acao_cod", "grupo_cod", "fonte_cod", "ipu_cod"]
 
-[packages.reest]
+"chave_projetos_vale" = ["num_contrato_entrada"]
 
-"reest_rec" = "chave_rec"
-"reest_desp" = "chave_desp"
+"chave_contratos" = [
+    "uo_cod",
+    "elemento_item_cod",
+    "num_processo_compra",
+    "num_contrato_saida",
+]
+
+"chave_loa" = [
+    "uo_cod",
+    "funcao_cod",
+    "acao_cod",
+    "grupo_cod",
+    "modalidade_cod",
+    "iag_cod",
+    "fonte_cod",
+    "ipu_cod",
+]
+
+"chave_exec" = [
+    "ano",
+    "mes_cod",
+    "uo_cod",
+    "ue_cod",
+    "upg_cod",
+    "uo_fin_cod",
+    "funcao_cod",
+    "acao_cod",
+    "grupo_cod",
+    "modalidade_cod",
+    "iag_cod",
+    "fonte_cod",
+    "ipu_cod",
+    "elemento_item_cod",
+    "elemento_dea_cod",
+    "item_dea_cod",
+    "num_processo_compra",
+    "cnpj_cpf_formatado",
+    "num_contrato_saida",
+    "num_contrato_entrada",
+    "num_obra",
+    "num_empenho",
+]
 
 [packages.sisor]
 
 "base_orcam_receita_fiscal" = "chave_rec"
-"base_orcam_despesa_item_fiscal" = "chave_desp"
+"base_orcam_despesa_item_fiscal" = "chave_loa"
+
+[packages.acordo_vale_brumadinho]
+
+"projetos_vale" = "chave_projetos_vale"
+
+[packages.siad]
+
+"compras" = "chave_contratos"
+
+[packages.siafi]
+
+"execucao" = "chave_exec"
+"restos_pagar" = "chave_exec"

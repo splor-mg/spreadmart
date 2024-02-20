@@ -1,9 +1,9 @@
 {
   "resources": [
     {
-      "name": "fact_base_orcam_despesa_item_fiscal",
+      "name": "base_orcam_despesa_item_fiscal",
       "type": "table",
-      "path": "data/fact_base_orcam_despesa_item_fiscal.csv",
+      "path": "data/base_orcam_despesa_item_fiscal.csv",
       "scheme": "file",
       "format": "csv",
       "mediatype": "text/csv",
@@ -74,9 +74,9 @@
       }
     },
     {
-      "name": "fact_base_orcam_receita_fiscal",
+      "name": "base_orcam_receita_fiscal",
       "type": "table",
-      "path": "data/fact_base_orcam_receita_fiscal.csv",
+      "path": "data/base_orcam_receita_fiscal.csv",
       "scheme": "file",
       "format": "csv",
       "mediatype": "text/csv",
@@ -183,17 +183,98 @@
       }
     },
     {
-      "name": "fact_execucao",
+      "name": "compras",
       "type": "table",
-      "path": "data/fact_execucao.csv",
+      "path": "data/compras.csv",
       "scheme": "file",
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "hash": "sha256:e3b65f73ee68722c62d7ca8a407b2ef47654571813a8f438761c52437ea62cb9",
-      "bytes": 6983982,
+      "hash": "sha256:b5a47763c747a28b4862ec90eaf84cbb0b1ba4255772c57bcf4381300dceef25",
+      "bytes": 107972273,
+      "fields": 16,
+      "rows": 494357,
+      "schema": {
+        "fields": [
+          {
+            "name": "chave_contratos",
+            "type": "string"
+          },
+          {
+            "name": "objeto_processo",
+            "type": "string"
+          },
+          {
+            "name": "vlr_total_homologado",
+            "type": "number"
+          },
+          {
+            "name": "vlr_total_atualizado",
+            "type": "number"
+          },
+          {
+            "name": "situacao_contrato_saida",
+            "type": "string"
+          },
+          {
+            "name": "tipo_contrato_saida",
+            "type": "string"
+          },
+          {
+            "name": "is_execucao_continuada",
+            "type": "boolean"
+          },
+          {
+            "name": "url_arquivos_contrato_saida",
+            "type": "string"
+          },
+          {
+            "name": "objeto_contrato_saida",
+            "type": "string"
+          },
+          {
+            "name": "data_assinatura_contrato_saida",
+            "type": "datetime"
+          },
+          {
+            "name": "data_inicio_vigencia_contrato_saida",
+            "type": "datetime"
+          },
+          {
+            "name": "data_limite_vigencia_contrato_saida",
+            "type": "datetime"
+          },
+          {
+            "name": "data_termino_vigencia_contrato_saida",
+            "type": "datetime"
+          },
+          {
+            "name": "data_publicacao_contrato_saida",
+            "type": "datetime"
+          },
+          {
+            "name": "orgao_cod",
+            "type": "integer"
+          },
+          {
+            "name": "situacao_processo",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    {
+      "name": "execucao",
+      "type": "table",
+      "path": "data/execucao.csv",
+      "scheme": "file",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "hash": "sha256:f2807547d46203a27b211df2e03aae2e8157f82b144e61bc0d8ffd57dde2b950",
+      "bytes": 599252699,
       "fields": 8,
-      "rows": 50277,
+      "rows": 4135194,
       "schema": {
         "fields": [
           {
@@ -218,7 +299,7 @@
           },
           {
             "name": "vlr_liquidado_retido",
-            "type": "integer"
+            "type": "number"
           },
           {
             "name": "vlr_pago_orcamentario",
@@ -232,17 +313,175 @@
       }
     },
     {
-      "name": "fact_restos_pagar",
+      "name": "link",
       "type": "table",
-      "path": "data/fact_restos_pagar.csv",
+      "path": "data/link.csv",
       "scheme": "file",
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "hash": "sha256:5ef05387b722027f88f417ecc7d54765a549aa5523317f40b688eb5a759ce899",
-      "bytes": 26410785,
+      "hash": "sha256:42a9d7e52af79b84765e78d170ebdf7232efc2d4504737aff6cd5448209e72ca",
+      "bytes": 1492958572,
+      "fields": 27,
+      "rows": 6069176,
+      "schema": {
+        "fields": [
+          {
+            "name": "chave_contratos",
+            "type": "string"
+          },
+          {
+            "name": "chave_exec",
+            "type": "any"
+          },
+          {
+            "name": "chave_loa",
+            "type": "any"
+          },
+          {
+            "name": "chave_projetos_vale",
+            "type": "integer"
+          },
+          {
+            "name": "chave_rec",
+            "type": "any"
+          },
+          {
+            "name": "num_contrato_entrada",
+            "type": "integer"
+          },
+          {
+            "name": "num_processo_compra",
+            "type": "string"
+          },
+          {
+            "name": "uo_cod",
+            "type": "integer"
+          },
+          {
+            "name": "elemento_item_cod",
+            "type": "integer"
+          },
+          {
+            "name": "num_contrato_saida",
+            "type": "integer"
+          },
+          {
+            "name": "ano",
+            "type": "any"
+          },
+          {
+            "name": "mes_cod",
+            "type": "any"
+          },
+          {
+            "name": "ue_cod",
+            "type": "any"
+          },
+          {
+            "name": "upg_cod",
+            "type": "any"
+          },
+          {
+            "name": "uo_fin_cod",
+            "type": "any"
+          },
+          {
+            "name": "funcao_cod",
+            "type": "any"
+          },
+          {
+            "name": "acao_cod",
+            "type": "any"
+          },
+          {
+            "name": "grupo_cod",
+            "type": "any"
+          },
+          {
+            "name": "modalidade_cod",
+            "type": "any"
+          },
+          {
+            "name": "iag_cod",
+            "type": "any"
+          },
+          {
+            "name": "fonte_cod",
+            "type": "any"
+          },
+          {
+            "name": "ipu_cod",
+            "type": "any"
+          },
+          {
+            "name": "elemento_dea_cod",
+            "type": "any"
+          },
+          {
+            "name": "item_dea_cod",
+            "type": "any"
+          },
+          {
+            "name": "cnpj_cpf_formatado",
+            "type": "any"
+          },
+          {
+            "name": "num_obra",
+            "type": "any"
+          },
+          {
+            "name": "num_empenho",
+            "type": "any"
+          }
+        ]
+      }
+    },
+    {
+      "name": "projetos_vale",
+      "type": "table",
+      "path": "data/projetos_vale.csv",
+      "scheme": "file",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "hash": "sha256:068fa5c492b8af4825e403116564ca61c661e5063c72d671920deb0e0599bbe9",
+      "bytes": 6850,
+      "fields": 4,
+      "rows": 62,
+      "schema": {
+        "fields": [
+          {
+            "name": "chave_projetos_vale",
+            "type": "integer"
+          },
+          {
+            "name": "projeto",
+            "type": "string"
+          },
+          {
+            "name": "anexo",
+            "type": "string"
+          },
+          {
+            "name": "valor_projeto",
+            "type": "number"
+          }
+        ]
+      }
+    },
+    {
+      "name": "restos_pagar",
+      "type": "table",
+      "path": "data/restos_pagar.csv",
+      "scheme": "file",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "hash": "sha256:19ac235716e52b37b74e3d49c0a1ad8ae1054d5d3b33f0ab36ad9eb4b7e7c50d",
+      "bytes": 185971543,
       "fields": 20,
-      "rows": 205133,
+      "rows": 1438586,
       "schema": {
         "fields": [
           {
@@ -271,7 +510,7 @@
           },
           {
             "name": "vlr_cancelado_rpnp",
-            "type": "integer"
+            "type": "number"
           },
           {
             "name": "vlr_restabelecido_rpnp",
@@ -299,7 +538,7 @@
           },
           {
             "name": "vlr_cancelado_rpp",
-            "type": "integer"
+            "type": "number"
           },
           {
             "name": "vlr_desconto_rpp",
@@ -319,127 +558,10 @@
           },
           {
             "name": "vlr_retencao_rpp",
-            "type": "number"
+            "type": "integer"
           },
           {
             "name": "vlr_anulacao_retencao_rpp",
-            "type": "integer"
-          }
-        ]
-      }
-    },
-    {
-      "name": "link_table",
-      "type": "table",
-      "path": "data/link_table.csv",
-      "scheme": "file",
-      "format": "csv",
-      "mediatype": "text/csv",
-      "encoding": "utf-8",
-      "hash": "sha256:42f5a832237b4ae4825fdf1cd85f41ee53c36323009503c0250ce8dd2f554e64",
-      "bytes": 48887006,
-      "fields": 25,
-      "rows": 258414,
-      "schema": {
-        "fields": [
-          {
-            "name": "chave_exec",
-            "type": "string"
-          },
-          {
-            "name": "chave_loa",
-            "type": "string"
-          },
-          {
-            "name": "chave_rec",
-            "type": "string"
-          },
-          {
-            "name": "ano",
-            "type": "integer"
-          },
-          {
-            "name": "mes_cod",
-            "type": "integer"
-          },
-          {
-            "name": "uo_cod",
-            "type": "integer"
-          },
-          {
-            "name": "ue_cod",
-            "type": "integer"
-          },
-          {
-            "name": "upg_cod",
-            "type": "integer"
-          },
-          {
-            "name": "uo_fin_cod",
-            "type": "integer"
-          },
-          {
-            "name": "funcao_cod",
-            "type": "integer"
-          },
-          {
-            "name": "acao_cod",
-            "type": "integer"
-          },
-          {
-            "name": "grupo_cod",
-            "type": "integer"
-          },
-          {
-            "name": "modalidade_cod",
-            "type": "integer"
-          },
-          {
-            "name": "iag_cod",
-            "type": "integer"
-          },
-          {
-            "name": "fonte_cod",
-            "type": "integer"
-          },
-          {
-            "name": "ipu_cod",
-            "type": "integer"
-          },
-          {
-            "name": "elemento_item_cod",
-            "type": "integer"
-          },
-          {
-            "name": "elemento_dea_cod",
-            "type": "integer"
-          },
-          {
-            "name": "item_dea_cod",
-            "type": "integer"
-          },
-          {
-            "name": "num_processo_compra",
-            "type": "string"
-          },
-          {
-            "name": "cnpj_cpf_formatado",
-            "type": "string"
-          },
-          {
-            "name": "num_contrato_saida",
-            "type": "integer"
-          },
-          {
-            "name": "num_contrato_entrada",
-            "type": "integer"
-          },
-          {
-            "name": "num_obra",
-            "type": "integer"
-          },
-          {
-            "name": "num_empenho",
             "type": "integer"
           }
         ]
