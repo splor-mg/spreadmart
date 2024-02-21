@@ -23,7 +23,7 @@ exec_desp <- siafi$execucao[
 ]
 
 execucao <- join(exec_rp, exec_desp, 
-                 by = c("ano", "uo_cod", "num_contrato_entrada", "num_processo_compra", "num_contrato_saida"),
+                 by = c("ano", "uo_cod", "num_contrato_entrada", "num_contrato_saida"),
                  value.var = c("vlr_empenhado", 
                                "vlr_liquidado", 
                                "vlr_despesa_liquidada_rpnp",
@@ -39,28 +39,29 @@ valores_contratos <- siad$compras[
     num_contrato_saida)
 ]
 
+dt <- left_join(execucao, 
+                valores_contratos, 
+          by = c("uo_cod", "num_contrato_saida")) |> 
+      left_join(projetos, "num_contrato_entrada")
+
 info_contratos <- siad$compras[
-  ,
-  .(vlr_total_atualizado = sum(vlr_total_atualizado)),
+  num_contrato_saida %in% dt$num_contrato_saida,
   .(uo_cod, 
     num_contrato_saida,
     num_processo_compra, 
     objeto_contrato_saida,
     data_inicio_vigencia_contrato_saida, 
     data_limite_vigencia_contrato_saida)
-]
+] |> unique()
 
+dt <- left_join(dt, info_contratos, c("uo_cod", "num_contrato_saida"))
 
-dt <- left_join(execucao, 
-          contratos, 
-          by = c("uo_cod", "num_processo_compra", "num_contrato_saida")) |> 
-      left_join(projetos, "num_contrato_entrada")
-
-ouptut <- dt[
+output <- dt[
   ,
   .(vlr_total_atualizado_contrato = sum(vlr_total_atualizado),
     vlr_empenhado = sum(vlr_empenhado),
-    vlr_liquidado = sum(vlr_despesa_liquidada_rpnp),
+    vlr_liquidado = sum(vlr_liquidado),
+    vlr_liquidado_rpnp = sum(vlr_despesa_liquidada_rpnp),
     vlr_pago_financeiro = sum(vlr_pago_financeiro),
     vlr_pago_rpnp = sum(vlr_pago_rpnp),
     vlr_pago_rpp = sum(vlr_pago_rpp)
@@ -74,5 +75,8 @@ ouptut <- dt[
     data_limite_vigencia_contrato_saida)
 ]
 
-writexl::write_xlsx(ouptut, "acordo-judicial-reparacao-vale.xlsx")
+output[, data_inicio_vigencia_contrato_saida := as.Date(data_inicio_vigencia_contrato_saida)]
+output[, data_limite_vigencia_contrato_saida := as.Date(data_limite_vigencia_contrato_saida)]
+
+writexl::write_xlsx(output, "acordo-judicial-reparacao-vale.xlsx")
 
