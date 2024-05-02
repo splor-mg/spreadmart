@@ -1,0 +1,174 @@
+QUALIFY*;
+UNQUALIFY chave_loa, chave_rec, chave_contratos, chave_exec, chave_projetos_vale;
+
+base_orcam_despesa_item_fiscal:
+LOAD chave_loa, 
+     orgao_cod, 
+     orgao_nome_sigla, 
+     uo_nome_sigla, 
+     subfuncao_cod, 
+     programa_cod, 
+     identificador_tipo_acao_cod, 
+     projeto_atividade_cod, 
+     subprojeto_subatividade_cod, 
+     categoria_cod, 
+     elemento_cod, 
+     item_cod, 
+     acao_desc, 
+     vlr_loa_desp
+FROM
+[C:\projects\teste\data\base_orcam_despesa_item_fiscal.csv]
+(txt, utf8, embedded labels, delimiter is ',', msq)
+;
+
+base_orcam_receita_fiscal:
+LOAD chave_rec, 
+     nome_uo, 
+     uo_sigla, 
+     fonte_desc, 
+     interpretacao, 
+     categoria, 
+     origem, 
+     especie, 
+     rubrica, 
+     alinea, 
+     subalinea, 
+     tipo_de_receita, 
+     item, 
+     subitem, 
+     receita_cod, 
+     receita_desc, 
+     interp_receita, 
+     vlr_loa_rec_uo, 
+     vlr_loa_rec_scppo, 
+     vlr_loa_rec, 
+     ano, 
+     base_legal, 
+     metodologia_de_calculo_e_premissas_utilizadas
+FROM
+[C:\projects\teste\data\base_orcam_receita_fiscal.csv]
+(txt, utf8, embedded labels, delimiter is ',', msq);
+
+SET ThousandSep=',';
+SET DecimalSep='.';
+
+compras:
+LOAD chave_contratos, 
+     objeto_processo, 
+     vlr_total_homologado, 
+     vlr_total_atualizado, 
+     situacao_contrato_saida, 
+     tipo_contrato_saida, 
+     is_execucao_continuada, 
+     url_arquivos_contrato_saida, 
+     objeto_contrato_saida, 
+     data_assinatura_contrato_saida, 
+     data_inicio_vigencia_contrato_saida, 
+     data_limite_vigencia_contrato_saida, 
+     data_termino_vigencia_contrato_saida, 
+     data_publicacao_contrato_saida, 
+     //orgao_cod, 
+     situacao_processo
+FROM
+[C:\projects\teste\data\compras.csv]
+(txt, utf8, embedded labels, delimiter is ',', msq)
+;
+
+execucao:
+LOAD chave_exec, 
+     programa_cod, 
+     licitacao_modalidade, 
+     vlr_empenhado, 
+     vlr_liquidado, 
+     vlr_liquidado_retido, 
+     vlr_pago_orcamentario, 
+     vlr_pago_financeiro
+FROM
+[C:\projects\teste\data\execucao.csv]
+(txt, utf8, embedded labels, delimiter is ',', msq)
+Where not isnull(chave_exec)
+;
+
+restos_pagar:
+LOAD chave_exec, 
+     ano_rp, 
+     //elemento_cod, 
+     //item_cod, 
+     razao_social_credor, 
+     vlr_inscrito_rpnp, 
+     vlr_cancelado_rpnp, 
+     vlr_restabelecido_rpnp, 
+     vlr_despesa_liquidada_rpnp, 
+     vlr_despesa_liquidada_pagar, 
+     vlr_saldo_rpp, 
+     vlr_saldo_rpnp, 
+     vlr_inscrito_rpp, 
+     vlr_cancelado_rpp, 
+     vlr_desconto_rpp, 
+     vlr_restabelecido_rpp, 
+     vlr_pago_rpp, 
+     vlr_anulacao_pagamento_rpp, 
+     vlr_retencao_rpp, 
+     vlr_anulacao_retencao_rpp
+FROM
+[C:\projects\teste\data\restos_pagar.csv]
+(txt, codepage is 1252, embedded labels, delimiter is ',', msq)
+Where not isnull(chave_exec)
+;
+
+link:
+
+LOAD
+distinct 
+ 	 chave_contratos, 
+     chave_exec, 
+     chave_loa, 
+     chave_projetos_vale, 
+     chave_rec, 
+     num_contrato_entrada, 
+     num_processo_compra, 
+     uo_cod, 
+     elemento_item_cod, 
+     num_contrato_saida, 
+     ano, 
+     mes_cod, 
+     ue_cod, 
+     upg_cod, 
+     uo_fin_cod, 
+     funcao_cod, 
+     acao_cod, 
+     grupo_cod, 
+     modalidade_cod, 
+     iag_cod, 
+     fonte_cod, 
+     ipu_cod, 
+     elemento_dea_cod, 
+     item_dea_cod, 
+     cnpj_cpf_formatado, 
+     num_obra, 
+     num_empenho
+FROM
+[C:\projects\teste\data\link.csv]
+(txt, codepage is 1252, embedded labels, delimiter is ',', msq)
+Where
+ not isnull(chave_contratos) AND
+    not isnull(chave_exec)and
+    not isnull(chave_loa) and
+    not isnull(chave_projetos_vale) and
+    not isnull(chave_rec)and
+    not isnull(uo_cod) and
+    not IsNull(ano) and
+    not IsNull(uo_cod) and
+    uo_cod <> -4;
+
+projetos_vale:
+LOAD chave_projetos_vale, 
+     projeto, 
+     anexo, 
+     valor_projeto
+FROM
+[C:\projects\teste\data\projetos_vale.csv]
+(txt, utf8, embedded labels, delimiter is ',', msq);
+
+
+
